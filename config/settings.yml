@@ -78,7 +78,7 @@ cache_formatted_text:
 wiki_compression:
   default: ""
 default_language:
-  default: es
+  default: en
 force_default_language_for_anonymous:
   default: 0
 force_default_language_for_loggedin:
