@@ -1,0 +1,106 @@
+es:
+  field_parent_issue: Petición madre
+  field_parent_title: Página madre
+  description_wiki_subpages_reassign: Elija la nueva página madre
+  label_parent_revision: Madre
+  field_board_parent: Foro madre
+  label_assigned_to_me_issues: Peticiones que me están asignadas
+  label_bulk_edit_selected_issues: Editar las peticiones seleccionadas
+  default_tracker_feature: Peticiones
+  enumeration_issue_priorities: Prioridad de las peticiones
+  error_issue_not_found_in_project: 'La petición no se encuentra o no está asociada a este proyecto'
+  field_is_closed: Petición resuelta
+  field_is_in_roadmap: Consultar las peticiones en la planificación
+  field_issue: Petición
+  field_issue_to: Petición relacionada
+  field_parent: Proyecto madre
+  label_issue: Petición
+  label_issue_added: Petición añadida
+  label_issue_category: Categoría de las peticiones
+  label_issue_category_plural: Categorías de las peticiones
+  label_issue_new: Nueva petición
+  label_issue_plural: Peticiones
+  label_issue_status: Estado de la petición
+  label_issue_status_plural: Estados de las peticiones
+  label_issue_tracking: Peticiones
+  label_issue_updated: Petición actualizada
+  label_issue_view_all: Ver todas las peticiones
+  label_issues_by: "Peticiones por %{value}"
+  label_related_issues: Peticiones relacionadas
+  label_reported_issues: Peticiones registradas por mí
+  label_roadmap_no_issues: No hay peticiones para esta versión
+  label_tracker_plural: Tipos de peticiones
+  label_watched_issues: Peticiones monitorizadas
+  mail_body_reminder: "%{count} peticion(es) asignadas a tí finalizan en los próximos %{days} días:"
+  mail_subject_account_activation_request: "Petición de activación de cuenta %{value}"
+  mail_subject_reminder: "%{count} peticion(es) finalizan en los próximos %{days} días"
+  notice_failed_to_save_issues: "Imposible grabar %{count} peticion(es) de %{total} seleccionada(s): %{ids}."
+  notice_no_issue_selected: "Ninguna petición seleccionada. Por favor, compruebe la petición que quiere modificar"
+  permission_add_issues: Añadir peticiones
+  permission_delete_issues: Borrar peticiones
+  permission_edit_issues: Modificar peticiones
+  permission_manage_categories: Administrar categorías de peticiones
+  permission_manage_issue_relations: Administrar relación con otras peticiones
+  permission_move_issues: Mover peticiones
+  project_module_issue_tracking: Peticiones
+  setting_cross_project_issue_relations: Permitir relacionar peticiones de distintos proyectos
+  setting_display_subprojects_issues: Mostrar por defecto peticiones de proy. secundarios en el principal
+  setting_issue_list_default_columns: Columnas por defecto para la lista de peticiones
+  setting_issues_export_limit: Límite de exportación de peticiones
+  text_destroy_time_entries_question: Existen %{hours} horas asignadas a la petición que quiere borrar. ¿Qué quiere hacer?
+  text_issue_added: "Petición %{id} añadida por %{author}."
+  text_issue_category_destroy_assignments: Dejar las peticiones sin categoría
+  text_issue_category_destroy_question: "Algunas peticiones (%{count}) están asignadas a esta categoría. ¿Qué desea hacer?"
+  text_issue_category_reassign_to: Reasignar las peticiones a la categoría
+  text_issue_updated: "La petición %{id} ha sido actualizada por %{author}."
+  text_issues_destroy_confirmation: '¿Seguro que quiere borrar las peticiones seleccionadas?'
+  text_issues_ref_in_commit_messages: Referencia y petición de corrección en los mensajes
+  text_no_configuration_data: "Todavía no se han configurado perfiles, ni tipos, estados y flujo de trabajo asociado a peticiones. Se recomiendo encarecidamente cargar la configuración por defecto. Una vez cargada, podrá modificarla."
+  text_reassign_time_entries: 'Reasignar las horas a esta petición:'
+  text_tip_issue_begin_day: petición que comienza este día
+  text_tip_issue_begin_end_day: petición que comienza y termina este día
+  text_tip_issue_end_day: petición que termina este día
+  text_tracker_no_workflow: No hay ningún flujo de trabajo definido para este tipo de petición
+  text_user_mail_option: "De los proyectos no seleccionados, sólo recibirá notificaciones sobre elementos monitorizados o elementos en los que esté involucrado (por ejemplo, peticiones de las que usted sea autor o asignadas a usted)."
+  error_no_tracker_in_project: Este proyecto no tiene asociados tipos de peticiones. Por favor, revise la configuración.
+  error_no_default_issue_status: No se ha definido un estado de petición por defecto. Por favor, revise la configuración (en "Administración" -> "Estados de las peticiones").
+  error_can_not_reopen_issue_on_closed_version: No se puede reabrir una petición asignada a una versión cerrada
+  setting_issue_done_ratio: Calcular el ratio de peticiones realizadas con
+  setting_issue_done_ratio_issue_status: Usar el estado de peticiones
+  error_issue_done_ratios_not_updated: Ratios de peticiones realizadas no actualizado.
+  setting_issue_done_ratio_issue_field: Utilizar el campo de petición
+  notice_issue_done_ratios_updated: Ratios de peticiones realizadas actualizados.
+  label_update_issue_done_ratios: Actualizar ratios de peticiones realizadas
+  permission_view_issues: Ver peticiones
+  label_display_used_statuses_only: Sólo mostrar los estados usados por este tipo de petición
+  error_unable_delete_issue_status: Fue imposible eliminar el estado de la petición
+  permission_manage_subtasks: Gestionar subpeticiones
+  label_subtask_plural: Subpeticiones
+  error_can_not_delete_tracker: Este tipo contiene peticiones y no puede ser eliminado.
+  label_additional_workflow_transitions_for_assignee: Transiciones adicionales permitidas cuando la petición está asignada al usuario
+  label_additional_workflow_transitions_for_author: Transiciones adicionales permitidas cuando el usuario es autor de la petición
+  label_issues_visibility_own: Peticiones creadas por el usuario o asignadas a él
+  field_issues_visibility: Visibilidad de las peticiones
+  label_issues_visibility_all: Todas las peticiones
+  permission_set_own_issues_private: Poner las peticiones propias como públicas o privadas
+  permission_set_issues_private: Poner peticiones como públicas o privadas
+  label_issues_visibility_public: Todas las peticiones no privadas
+  text_issues_destroy_descendants_confirmation: Se procederá a borrar también %{count} subpeticion(es).
+  notice_issue_successful_create: Petición %{id} creada.
+  setting_issue_group_assignment: Permitir asignar peticiones a grupos
+  description_issue_category_reassign: Elija la categoría de la petición
+  setting_default_issue_start_date_to_creation_date: Utilizar la fecha actual como fecha de inicio para nuevas peticiones
+  label_x_issues:
+    zero:  0 petición
+    one:   1 petición
+    other: "%{count} peticiones"
+  setting_commit_cross_project_ref: Permitir referenciar y resolver peticiones de todos los demás proyectos
+  notice_issue_update_conflict: La petición ha sido actualizada por otro usuario mientras la editaba.
+  permission_manage_related_issues: Gestionar peticiones relacionadas
+  label_copy_subtasks: Copiar subpeticiones
+  label_any_issues_in_project: cualquier petición del proyecto
+  label_any_issues_not_in_project: cualquier petición que no sea del proyecto
+  label_no_issues_in_project: no hay peticiones en el proyecto
+  setting_cross_project_subtasks: Permitir subpeticiones cruzadas entre proyectos
+  label_attribute_of_issue: "%{name} de la petición"
+  setting_default_projects_tracker_ids: Tipos de petición habilitados por defecto
