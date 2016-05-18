@@ -1,0 +1,53 @@
+<%= error_messages_for 'member' %>
+<% members = @department.users.sort %>
+
+<div class="splitcontentleft">
+<% if members.any? %>
+<table class="list members">
+	<thead><tr>
+	  <th><%= l(:label_user) %> / <%= l(:label_group) %></th>
+      <% if authorize_for_with_global :departments, :removecontact, true %>
+	  <th style="width:15%"></th>
+      <% end %>
+	</tr></thead>
+	<tbody>
+	<% members.each do |member| %>
+	<% next if member.new_record? %>
+	<tr id="member-<%= member.id %>" class="<%= cycle 'odd', 'even' %> member">
+	<td class="<%= member.class.name.downcase %>"><%= link_to_user member %></td>
+    <% if authorize_for_with_global :departments, :removecontact, true %>
+  <td class="buttons">
+      <%= delete_link department_remove_member_path(@department, member), :remote => true %>
+  </td>
+    <% end %>
+	</tr>
+<% end; reset_cycle %>
+	</tbody>
+</table>
+<% else %>
+<p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+</div>
+
+
+<% principals = User.active.find(:all, :limit => 100, :order => 'type, login, lastname ASC') - @department.users %>
+
+<div class="splitcontentright">
+<% if principals.any? %>
+  <%=form_for @member, {:as => :member, :remote => true, :url => department_add_member_path(@department), :method => :post,
+									   :loading => "$('member-add-submit').disable()",
+									   :complete => "$('member-add-submit').enable()"} do |f| %>
+    <fieldset><legend><%=l(:label_member_new)%></legend>
+    
+		<p><%= label_tag "principal_search", l(:label_user_search) %><%= text_field_tag 'principal_search', nil %></p>
+                <%= javascript_tag "observeSearchfield('principal_search', null, '#{ escape_javascript department_members_autocomplete_path(@department, :format => 'js') }')" %>
+		
+		<div id="principals_for_new_member">
+			<%= principals_check_box_tags 'member[user_ids][]', principals %>
+		</div>
+		
+    <p><%= submit_tag l(:button_add), :id => 'member-add-submit' %></p>
+		</fieldset>
+  <% end %>
+<% end %>
+</div>

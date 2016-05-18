@@ -1,0 +1,23 @@
+<%
+  @departments = Department.find(:all, :order => :name)
+%>
+<div id="departments">
+  <hr />
+  <div class="contextual">
+  <% if authorize_for('departments', 'addissue') %>
+      <%= toggle_link l(:button_add), 'new-department-form' %>
+  <% end %>
+  </div>
+
+  <p><strong><%= l(:field_departments) %></strong></p>
+
+<div id="issue-departments">
+  <%= render :partial => 'issues/departments/list', :locals => {:issue => @issue} %>
+</div>
+
+<% if authorize_for('departments', 'addissue') %>
+  <%= render :partial => 'issues/departments/form', :locals => {:issue => @issue}%>
+<% end %>
+
+</div>
+

@@ -1,0 +1,20 @@
+# English strings go here for Rails i18n
+en:
+  field_departments: Departments
+  field_department: Department
+  field_department_name: Department Name
+  field_contacts: Contact
+  field_name: Name
+  department_remove: Remove
+  department_name: Name
+  department_abbreviation: Abbreviation
+  department_contacts: Contacts
+  label_department_plural: Departments
+  title_department_plural: Departments
+  title_department_new: New Department
+  title_department_edit: Edit Department
+  title_department_view: View Department
+  link_cancel: Cancel
+  multi_select_key_command: Command
+  multi_select_key_control: Control
+  select_no_department: Standard Software (no department)

@@ -1,0 +1,20 @@
+<%= form_for @department do |f| %>
+  <%= error_messages_for 'department' %>
+  <h3>Department Information</h3>
+  <table>
+    <tbody>
+      <tr>
+        <td style="text-align:right;"><%= f.label :name %>:</td>
+        <td><%= f.text_field :name, :size => 40 %></td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><%= f.label :abbreviation %>:</td>
+        <td><%= f.text_field :abbreviation, :size => 10 %></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <p>
+    <%= f.submit "#{f.object.new_record? ? 'Create' : 'Save'} Department" %> <%= f.object.new_record? ? link_to(l(:link_cancel), departments_path) : link_to(l(:link_cancel), department_path, :id => @department)  %>
+  </p>
+<%- end %>

@@ -1,0 +1,21 @@
+<%= error_messages_for 'department' %>
+	
+<%= form_for @department, {:as => :department, :remote => true,
+     :url => issue_add_department_path(@issue),
+     :method => :post,
+     :html => {:id => 'new-department-form', :style => (@department ? '' : 'display: none;')}} do |f| %>
+       
+<table>
+  <tr>
+    <td>Choose Department:</td>
+		<td><%= select( 'department', 'department_id', @departments.map {|u| [u.name,u.id]} ) %></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <%= submit_tag l(:button_add) %>
+      <%= toggle_link l(:button_cancel), 'new-department-form'%>
+    </td>
+  </tr>
+</table>
+
+<% end %>
