@@ -4,9 +4,15 @@ class Department < ActiveRecord::Base
 
   cattr_reader :per_page
   @@per_page = 25
-  validates_presence_of :name
+  validates_presence_of :nombre, :codidgo
+
+ if ActiveRecord::VERSION::MAJOR >= 4
+    has_one :avatar, lambda { where("#{Attachment.table_name}.description = 'avatar'") }, :class_name => "Attachment", :as  => :container, :dependent => :destroy
+  else
+    has_one :avatar, :conditions => "#{Attachment.table_name}.description = 'avatar'", :class_name => "Attachment", :as  => :container, :dependent => :destroy
+  end
 
   def to_s
-    name
+    nombre
   end
 end

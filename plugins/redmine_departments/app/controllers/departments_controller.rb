@@ -1,17 +1,15 @@
 class DepartmentsController < ApplicationController
   unloadable
 
+  include Redmine::SafeAttributes
+
   helper :members
 
   def index
-
     limit = per_page_option
     @departments_count = Department.count
-    @departments_pages = Paginator.new self, @departments_count, limit, params['page']
-    @departments = Department.find(:all,
-                  :order => 'name ASC',
-                  :offset => @departments_pages.current.offset,
-                  :limit => limit)
+    @departments_pages = Paginator.new(@departments_count, limit, params['page'])
+    @departments = Department.all
     respond_to do |format|
       format.html { render :template => 'departments/index.html.erb', :layout => !request.xhr? }
     end
@@ -46,7 +44,7 @@ class DepartmentsController < ApplicationController
   def update
     @department = Department.find(params[:id])
     respond_to do |format|
-      if @department.update_attributes(params[:department])
+      if @department.update_attributes(departments_params)
         flash[:notice] = 'Department updated!'
         format.html { redirect_to @department }
       else
@@ -80,15 +78,12 @@ class DepartmentsController < ApplicationController
   
   def adduser
     @department = Department.find(params[:department_id])
+    @usuarios_ids = []
     @members = []
-    if params[:member] && request.post?
-      attrs = params[:member].dup
-      if (user_ids = attrs.delete(:user_ids))
-        user_ids.each do |user_id|
-          @members << User.first( :conditions=> attrs.merge(:id => user_id) )
-        end
-      else
-        @members << User.first( :conditions=> { :id => attrs } )
+    if params[:member] && params[:member] != "" && request.post?
+      for u in params[:member]
+        @usuarios_ids << u.last
+        @members << User.find(u.last)
       end
       @department.users << @members
     end
@@ -108,7 +103,7 @@ class DepartmentsController < ApplicationController
   end
 
   def create
-    @department = Department.new(params[:department])
+    @department = Department.new(departments_params)
     respond_to do |format|
       if @department.save
         format.html { redirect_to edit_department_path :id => @department }
@@ -148,5 +143,11 @@ private
   rescue ActiveRecord::RecordNotFound
     render_404
   end
-  
+
+  # Rails 4 Integration.
+  def departments_params
+    params.require(:department).permit(:nombre, :codidgo,:direccion,:direccion2,:codigo_postal,:localidad,:territorio,:telefono,:fax,:email_oficina,:telefono_vigilante,
+                                        :responsable_sepe,:telefono_responsable_sepe,:email_responsable_sepe,:anotaciones)
+  end
+
 end
