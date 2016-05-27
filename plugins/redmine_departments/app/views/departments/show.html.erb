@@ -3,7 +3,7 @@
 	  <%= link_to(l(:title_department_edit), edit_department_path, :class => 'icon icon-edit') %>
 	</div>
 <% end %>
-<h2><%= link_to l(:label_department_plural), :controller => 'departments', :action => 'index' %> &#187; <%= @department.nombre %> (<%= @department.codidgo %>)</h2>
+<h2><%= link_to l(:label_department_plural), :controller => 'departments', :action => 'index' %> &#187; <%= @department.nombre %> (<%= @department.codigo %>)</h2>
 
 <div id="department-show">
   <%= render :partial => 'datos_oficina', :locals => { :department => @department }%>
@@ -20,6 +20,11 @@
 <h3><%= l(:label_issue_plural) %></h3>
 <div id="department-issues">
   <%= render :partial => 'departments/issues/list', :locals => { :department => @department }%>
+</div>
+
+<h3><%= l(:label_attachment_plural) %></h3>
+<div id="department-issues">
+  <%= render :partial => 'departments/attachments/list', :locals => { :department => @department }%>
 </div>
 
 <% html_title(l(:title_department_view)) -%>

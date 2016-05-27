@@ -1,0 +1,18 @@
+<table class="list">
+	<thead style="text-align:left;">
+    <tr>
+      <th style="width:200px;">Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @department.attachments.each do |attachment| %>
+      <tr>
+      <td class="<%= attachment.class.name.downcase %>">
+        <a href="/departments/download/<%= attachment.id %>"> <%= attachment.filename %> </a>
+      </td>
+    </tr>
+    <%- end %>
+  </tbody>
+</table>
+
+

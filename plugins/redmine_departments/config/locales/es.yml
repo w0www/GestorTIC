@@ -7,6 +7,7 @@ en:
   department_name: Nombre
   department_abbreviation: Abreviación
   label_department_plural: Oficinas
+  label_attachment_plural: Ficheros
   title_department_plural: Oficinas
   title_department_new: Nueva oficina
   title_department_edit: Editar oficina
