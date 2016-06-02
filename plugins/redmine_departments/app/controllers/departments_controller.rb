@@ -4,6 +4,7 @@ class DepartmentsController < ApplicationController
   include Redmine::SafeAttributes
 
   helper :members
+  helper :attachments
 
   def index
     limit = per_page_option
@@ -23,6 +24,7 @@ class DepartmentsController < ApplicationController
   end
 
   def new
+    @members = User.active.where("type <> 'AnonymousUser'")
     @department = Department.new
     respond_to do |format|
       format.html 
@@ -35,6 +37,7 @@ class DepartmentsController < ApplicationController
   end
 
   def edit
+    @members = User.active.where("type <> 'AnonymousUser'")
     @department = Department.find(params[:id])
     respond_to do |format|
       format.html
@@ -44,6 +47,8 @@ class DepartmentsController < ApplicationController
   def update
     @department = Department.find(params[:id])
     respond_to do |format|
+      @department.save_attachments(params[:attachments] || (params[:issue] && params[:issue][:uploads]))  
+      @department.attach_saved_attachments 
       if @department.update_attributes(departments_params)
         flash[:notice] = 'Department updated!'
         format.html { redirect_to @department }
@@ -102,8 +107,46 @@ class DepartmentsController < ApplicationController
     end
   end
 
+  def removeattachment
+    @department = Department.find(params[:id])
+    @department.attachments.delete(Attachment.find(params[:attachment_id]))
+    respond_to do |format|
+      format.html { redirect_to :controller => 'departments', :action => 'edit', :id => @department }
+      format.js
+    end
+  end
+
+
+  def download
+    @attachment = Attachment.find(params[:id])
+    send_file @attachment.diskfile, :filename => filename_for_content_disposition(@attachment.filename),
+                                          :type => detect_content_type(@attachment),
+                                          :disposition => disposition(@attachment)
+  end
+
+
+  def filename_for_content_disposition(name)
+    request.env['HTTP_USER_AGENT'] =~ %r{(MSIE|Trident|Edge)} ? ERB::Util.url_encode(name) : name
+  end
+
+  def detect_content_type(attachment)
+    content_type = attachment.content_type
+    if content_type.blank? || content_type == "application/octet-stream"
+      content_type = Redmine::MimeType.of(attachment.filename)
+    end
+    content_type.to_s
+  end
+
+  def disposition(attachment)
+      'attachment'
+  end
+
+
   def create
+    @members = User.active.where("type <> 'AnonymousUser'")
     @department = Department.new(departments_params)
+    @department.save_attachments(params[:attachments] || (params[:issue] && params[:issue][:uploads]))  
+    @department.attach_saved_attachments  
     respond_to do |format|
       if @department.save
         format.html { redirect_to edit_department_path :id => @department }
@@ -146,8 +189,8 @@ private
 
   # Rails 4 Integration.
   def departments_params
-    params.require(:department).permit(:nombre, :codidgo,:direccion,:direccion2,:codigo_postal,:localidad,:territorio,:telefono,:fax,:email_oficina,:telefono_vigilante,
-                                        :responsable_sepe,:telefono_responsable_sepe,:email_responsable_sepe,:anotaciones)
+    params.require(:department).permit(:nombre, :codigo,:direccion,:direccion2,:codigo_postal,:localidad,:territorio,:telefono,:fax,:email_oficina,:telefono_vigilante,
+                                        :responsable_sepe,:telefono_responsable_sepe,:email_responsable_sepe,:anotaciones, :responsable_id,:coordinador_id)
   end
 
 end
