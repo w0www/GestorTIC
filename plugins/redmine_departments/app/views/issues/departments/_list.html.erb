@@ -1,26 +1,28 @@
 <% if issue.departments.any? %>
   <div class="wiki">
-    <ul>
-      <table style="width: 100%; border: 0; margin-bottom: 0;">
-        <% issue.departments.each do |department| %>
+    <% issue.departments.each do |department| %>
+      <table class="list" style="border: 0px!important;  border-collapse: separate!important;">
+        <tr>
           <strong><%= link_to(department.nombre, department, :id => department) %></strong>
-          <tr>
-            <td style="border: 0; padding: 0;">
-              <% for attribute in department.attributes.keys %>
-                <% unless attribute.humanize == "Id" || attribute.humanize == "Nombre" || attribute.humanize == "Anotaciones" %>
-                    <p><strong><%= attribute.humanize %>:</strong> <%= department.attributes[attribute].to_s %></p>
-                <% end %>
-              <% end %>
-            </td>
-            <% if authorize_for('departments', 'removeissue') %>
-              <td style="border: 0; padding: 0;">
-                <%= delete_link issue_remove_department_path(issue, department), :remote => true %>
-              </td>
-            <% end %>
-          </tr>
-        <% end %>
+          <% if authorize_for('departments', 'removeissue') %>
+            <span style="margin-left:10px;"><%= delete_link issue_remove_department_path(issue, department), :remote => true %></span>
+          <% end %>
+        </tr>
+        <tr>
+          <td><strong>Nombre:</strong> <%= department.nombre %></td>
+          <td><strong>Código:</strong> <%= department.codigo %></td>
+        </tr> 
+        <tr> 
+          <td><strong>Dirección:</strong> <%= department.direccion %></td>
+          <td><strong>Dirección2:</strong> <%= department.direccion2 %></td>
+        </tr> 
+        <tr> 
+          <td><strong>Télefono:</strong> <%= department.telefono %></td>
+          <td><strong>Email Oficina:</strong> <%= department.email_oficina %></td>
+        </tr> 
       </table>
-    </ul>
+      <br/><br/>
+    <% end %>
   </div>
 <% else %>
   <div class="wiki">

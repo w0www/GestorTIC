@@ -1,7 +1,35 @@
-<% for attribute in @department.attributes.keys %>
-  <% unless attribute.humanize == "Id" %>
-      <p><strong><%= attribute.humanize %>:</strong> <%= @department.attributes[attribute].to_s %></p>
-  <% end %>
-<% end %>
+<div>
+<table style="width:100%; font-size:18px;">
+  <tbody> 
+    <tr>
+      <td><strong>Nombre:</strong> <%= @department.nombre %></td>
+      <td><strong>Código:</strong> <%= @department.codigo %></td>
+    </tr> 
+    <tr> 
+      <td><strong>Dirección:</strong> <%= @department.direccion %></td>
+      <td><strong>Dirección2:</strong> <%= @department.direccion2 %></td>
+    </tr> 
+    <tr> 
+      <td><strong>Télefono:</strong> <%= @department.telefono %></td>
+      <td><strong>Email Oficina:</strong> <%= @department.email_oficina %></td>
+      <td><strong>Télefono vigilante:</strong> <%= @department.telefono_vigilante %></td>
+    </tr> 
+    <tr>
+      <% enlace = "/users/#{@department.responsable_id}" %>
+      <td><strong>Responsable:</strong> <%= link_to @department.responsable, user_path(@department.responsable) %> </td>
+      <td><strong>Coordinador:</strong> <%= link_to @department.coordinador, user_path(@department.coordinador) %></td>
+    </tr>
+    <tr> 
+      <td><strong>Responsable SEPE:</strong> <%= @department.responsable_sepe %></td>
+      <td><strong>Telefono Responsable SEPE:</strong> <%= @department.telefono_responsable_sepe %></td>
+      <td><strong>Email Responsable SEPE:</strong> <%= @department.email_responsable_sepe %></td>
+    </tr> 
+    <tr>
+      <td><strong>Anotaciones</strong><br/> <%= @department.anotaciones %></td>
+    </tr> 
+  </tbody> 
+</table>
+<div>
+
 
 

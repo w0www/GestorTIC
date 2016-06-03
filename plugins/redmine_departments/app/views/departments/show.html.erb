@@ -10,18 +10,18 @@
 </div>
 
 
-
+<br/><br/>
 
 <h3><%= l(:label_member_plural) %></h3>
 <div id="department-contacts">
   <%= render :partial => 'departments/users/list', :locals => { :department => @department }%>
 </div>
-
+<br/><br/>
 <h3><%= l(:label_issue_plural) %></h3>
 <div id="department-issues">
   <%= render :partial => 'departments/issues/list', :locals => { :department => @department }%>
 </div>
-
+<br/><br/>
 <h3><%= l(:label_attachment_plural) %></h3>
 <div id="department-issues">
   <%= render :partial => 'departments/attachments/list', :locals => { :department => @department }%>
