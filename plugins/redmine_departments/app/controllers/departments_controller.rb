@@ -37,8 +37,8 @@ class DepartmentsController < ApplicationController
   end
 
   def edit
-    @members = User.active.where("type <> 'AnonymousUser'")
     @department = Department.find(params[:id])
+    @members = User.active.where("type <> 'AnonymousUser'")
     respond_to do |format|
       format.html
     end
@@ -111,7 +111,7 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
     @department.attachments.delete(Attachment.find(params[:attachment_id]))
     respond_to do |format|
-      format.html { redirect_to :controller => 'departments', :action => 'edit', :id => @department }
+      format.html { redirect_to :controller => 'departments', :action => 'show', :id => @department }
       format.js
     end
   end

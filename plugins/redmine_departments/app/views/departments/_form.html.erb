@@ -1,3 +1,10 @@
+<!-- Por algún motivo no esta cargando bien las RUTAS de RAILS y hacemos el FIX para que funcione -->
+<%
+
+ %>
+
+
+
 <%= form_for @department do |f| %>
   <%= error_messages_for 'department' %>
   <h3><%= l(:department_information) %></h3>
@@ -75,15 +82,13 @@
         <td style="text-align:right;"><%= f.label :anotaciones %>:</td>
         <td><%= f.text_field :anotaciones, :size => 200 %></td>
       </tr>
-      <tr>
-      <h3><%= l(:label_attachment_plural) %></h3>
-      <div id="departments-attachments-form">
-        <%= render :partial => 'departments/attachments/form' %>
-      </div>
-      </tr>
     </tbody>
   </table>
   <hr />
+  <h3><%= l(:label_attachment_plural) %></h3>
+  <div id="departments-attachments-form">
+    <%= render :partial => 'departments/attachments/form' %>
+  </div>
   <p>
     <%= f.submit "#{f.object.new_record? ? 'Crear' : 'Guardar'} Oficina" %> <%= f.object.new_record? ? link_to(l(:link_cancel), departments_path) : link_to(l(:link_cancel), department_path, :id => @department)  %>
   </p>

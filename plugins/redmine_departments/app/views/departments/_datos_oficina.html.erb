@@ -15,9 +15,8 @@
       <td><strong>Télefono vigilante:</strong> <%= @department.telefono_vigilante %></td>
     </tr> 
     <tr>
-      <% enlace = "/users/#{@department.responsable_id}" %>
-      <td><strong>Responsable:</strong> <%= link_to @department.responsable, user_path(@department.responsable) %> </td>
-      <td><strong>Coordinador:</strong> <%= link_to @department.coordinador, user_path(@department.coordinador) %></td>
+      <td><strong>Responsable:</strong> <%= @department.responsable.blank? ? "" : link_to(@department.responsable, user_path(@department.responsable)) %> </td>
+      <td><strong>Coordinador:</strong> <%= @department.coordinador.blank? ? "" : link_to(@department.coordinador, user_path(@department.coordinador)) %></td>
     </tr>
     <tr> 
       <td><strong>Responsable SEPE:</strong> <%= @department.responsable_sepe %></td>
