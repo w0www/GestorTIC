@@ -50,7 +50,7 @@ class DepartmentsController < ApplicationController
       @department.save_attachments(params[:attachments] || (params[:issue] && params[:issue][:uploads]))  
       @department.attach_saved_attachments 
       if @department.update_attributes(departments_params)
-        flash[:notice] = 'Department updated!'
+        flash[:notice] = l('department_updated')
         format.html { redirect_to @department }
       else
         format.html { render :edit }

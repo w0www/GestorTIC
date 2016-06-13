@@ -21,7 +21,7 @@ module RedmineDepartments
             { :sql => "COALESCE(departments.department_id, '')",
               :joins => "LEFT JOIN issue_has_departments departments on departments.issue_id = #{TimeEntry.table_name}.issue_id",
               :klass => Department,
-              :label => :field_department
+              :label => :department
             }
           @available_criteria
         end

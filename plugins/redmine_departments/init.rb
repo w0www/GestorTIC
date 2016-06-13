@@ -15,8 +15,8 @@ Redmine::Plugin.register :redmine_departments do
     }
   }) 
     
-  menu :top_menu, :departments, { :controller => :departments, :action => :index }, :caption => :title_department_plural, :if => Proc.new{ User.current.logged? }
-  menu :admin_menu, :departments, {:controller => :departments, :action => :index }, :caption => :title_department_plural
+  menu :top_menu, :departments, { :controller => :departments, :action => :index }, :caption => :departments, :if => Proc.new{ User.current.logged? }
+  menu :admin_menu, :departments, {:controller => :departments, :action => :index }, :caption => :departments
   permission :view_attachments, {:attachments => [:edit,:show, :download, :thumbnail, :upload, :update, :destroy]}
 
   project_module :departments do |map|

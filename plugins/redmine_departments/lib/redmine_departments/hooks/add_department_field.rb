@@ -6,6 +6,7 @@ module RedmineDepartments
       #
       # Context:
       # * :issue => Issue being rendered
+      # * :user => User being rendered
       #
       def view_issues_form_details_bottom(context = {})
         if has_permission?(context)
@@ -16,6 +17,27 @@ module RedmineDepartments
         else
           return ''
         end
+      end
+
+      def view_users_form(context = {})
+          context[:controller].send(:render_to_string, {
+            :partial => "users/new/form",
+            :locals => context
+          })
+      end
+
+      def view_my_account(context = {})
+          context[:controller].send(:render_to_string, {
+            :partial => "users/new/form",
+            :locals => context
+          })
+      end
+
+      def view_account_left_bottom(context = {})
+          context[:controller].send(:render_to_string, {
+            :partial => "users/show",
+            :locals => context
+          })
       end
 
       def view_issues_bulk_edit_details_bottom(context = {})

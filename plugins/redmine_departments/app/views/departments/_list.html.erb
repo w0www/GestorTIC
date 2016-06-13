@@ -1,12 +1,12 @@
 <table class="list">
-  <thead style="text-align:left;">
+  <thead style="text-align:center;">
     <tr>
-      <th><%= l('department_name') %></th>
-      <th><%= l('department_abbreviation') %></th>
-      <th><%= l('label_member_plural') %></th>
-      <th><%= l('label_issue_plural') %></th>
+      <th><%= l('field_nombre') %></th>
+      <th><%= l('field_codigo') %></th>
+      <th><%= l('field_members') %></th>
+      <th><%= l('field_issues') %></th>
 			<% if authorize_for_with_global(:departments, :delete, true) %>
-      <th><%= l('department_remove') %></th>
+      <th><%= l('field_remove') %></th>
 				<% end %>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
 				<td><%= department.issues.count %></td>
 				<% if authorize_for_with_global(:departments, :delete, true) %>
         <td style="border: 0; padding: 0;">
-          <%= link_to(image_tag('delete.png'), department_path(department,:per_page => params[:per_page], :page => params[:page]), :confirm => "Are you sure?", :method => :delete) %>
+          <%= link_to(image_tag('delete.png'), department_path(department,:per_page => params[:per_page], :page => params[:page]), :confirm => l('confirm'), :method => :delete) %>
         </td>
 				<% end %>
       </tr>

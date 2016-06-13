@@ -2,7 +2,7 @@ class AddDepartments < ActiveRecord::Migration
   def self.up
     create_table :departments, :force => true do |t|
       t.string "nombre", :limit => 100, :null => false
-      t.string "codigo", :limit => 10, :null => true, :default => nil
+      t.string "codigo", :limit => 20, :null => true, :default => nil
       t.string "direccion", :limit => 100, :null => false
       t.string "direccion2", :limit => 100, :null => false
       t.string "codigo_postal", :limit => 100, :null => false
@@ -22,6 +22,8 @@ class AddDepartments < ActiveRecord::Migration
 
     add_index :departments, :responsable_id
     add_index :departments, :coordinador_id
+
+    add_column :users, :department_id, :integer
   end
 
   def self.down
@@ -29,5 +31,7 @@ class AddDepartments < ActiveRecord::Migration
     remove_index :departments, :column => :coordinador_id
 
     drop_table :departments
+
+    remove_column :users, :department_id
   end
 end

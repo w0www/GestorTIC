@@ -1,23 +1,21 @@
-<%
-  @departments = Department.all
-%>
+<% @departments = Department.all %>
 <div id="departments">
   <hr />
   <div class="contextual">
-  <% if authorize_for('departments', 'addissue') %>
+    <% if authorize_for('departments', 'addissue') %>
       <%= toggle_link l(:button_add), 'new-department-form' %>
-  <% end %>
+    <% end %>
   </div>
 
-  <p><strong><%= l(:field_departments) %></strong></p>
+  <p><strong><%= l(:departments) %></strong></p>
 
-<div id="issue-departments">
-  <%= render :partial => 'issues/departments/list', :locals => {:issue => @issue} %>
-</div>
+  <div id="issue-departments">
+    <%= render :partial => 'issues/departments/list', :locals => {:issue => @issue} %>
+  </div>
 
-<% if authorize_for('departments', 'addissue') %>
-  <%= render :partial => 'issues/departments/form', :locals => {:issue => @issue}%>
-<% end %>
+  <% if authorize_for('departments', 'addissue') %>
+    <%= render :partial => 'issues/departments/form', :locals => {:issue => @issue}%>
+  <% end %>
 
 </div>
 

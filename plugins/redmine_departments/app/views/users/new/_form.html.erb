@@ -1,0 +1,4 @@
+<p>
+  <label for="user_department_id"><%= l(:department) %></label>
+  <%= select_tag "user[department_id]", options_for_select(Department.all.collect{ |d| [d.nombre, d.id] }, selected: @user.department_id ), :include_blank => true %>
+</p>

@@ -1,21 +1,57 @@
-# English strings go here for Rails i18n
+# Spanish strings go here for Rails i18n
 en:
-  field_departments: Oficinas
-  field_department: Oficina
-  field_department_name: Nombre de la oficina
-  department_remove: Borrar
-  department_name: Nombre
-  department_abbreviation: Abreviación
-  label_department_plural: Oficinas
-  label_attachment_plural: Ficheros
-  title_department_plural: Oficinas
-  title_department_new: Nueva oficina
-  title_department_edit: Editar oficina
-  title_department_view: Ver oficina
-  link_cancel: Cancelar
-  multi_select_key_command: Comando
-  multi_select_key_control: Control
-  select_no_department: (niguno)
-  notice_failed_to_save_members: Error al guardar, seleccione miembros
+  departments: Oficinas
+  department: Oficina
+  department_new: Nueva Oficina
+  department_edit: Editar Oficina
+  department_view: Ver Oficina
   department_information: Información Oficina
+  department_update: Oficina Actualizada!
+  not_department: Sin Oficina
+  field_department: Oficina
+
+
+  field_codigo: Código
+  field_nombre: Nombre
+  field_direccion: Dirección
+  field_direccion2: SubDirección
+  field_codigo_postal: Código Postal
+  field_localidad: Ciudad
+  field_territorio: Provincia
+  field_telefono: Teléfono
+  field_fax: Fax 
+  field_email_oficina: Correo Electrónico
+  field_telefono_vigilante: Teléfono Vigilante
+  field_responsable: Responsable
+  field_coordinador: Coordinador
+  field_responsable_sepe: Responsable SEPE
+  field_email_responsable_sepe: Correo Responasble SEPE
+  field_telefono_responsable_sepe: Teléfono Responsable SEPE
+  field_anotaciones: Anotaciones
+  field_members: Miembros
+  field_issues: Peticiones
+  field_remove: Borrar
+
+  hold_multiselect: "Para seleccionar varias oficinas, presiona %{key}"
+  multi_select_key_command: Command
+  multi_select_key_control: Control
+
+  confirm: Estás seguro?
+  link_cancel: Cancelar
+  link_create: Crear Oficina
+  link_save: Guardar Oficina
+
+  field_issues_id: ID
+  field_issues_subject: Asunto
+  field_issues_status: Estado
+  field_issues_remove: Borrar
+
+  field_attachment_nombre: Nombre
+  field_attachment_description: Descripción
+  field_attachment_size: Tamaño
+  field_attachment_created_date: Fecha de creación
+  field_attachment_author: Autor
+  field_attachment_remove: Borrar
+
+  notice_failed_to_save_members: Error al guardar, seleccione miembros
   choose_department: "Elije oficina:"
