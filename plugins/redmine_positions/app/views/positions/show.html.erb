@@ -1,0 +1,30 @@
+<% if authorize_for_with_global(:positions, :edit, true) %>
+	<div class="contextual">
+	  <%= link_to(l(:position_edit), edit_position_path, :class => 'icon icon-edit') %>
+	</div>
+<% end %>
+<h2><%= link_to l(:positions), :controller => 'positions', :action => 'index' %> &#187; <%= @position.nombre %> (<%= @position.codigo %>)</h2>
+
+<div id="position-show">
+  <%= render :partial => 'datos_oficina', :locals => { :position => @position }%>
+</div>
+
+
+<br/><br/>
+
+<h3><%= l(:label_member_plural) %></h3>
+<div id="position-contacts">
+  <%= render :partial => 'positions/users/list', :locals => { :position => @position }%>
+</div>
+<br/><br/>
+<h3><%= l(:label_issue_plural) %></h3>
+<div id="position-issues">
+  <%= render :partial => 'positions/issues/list', :locals => { :position => @position }%>
+</div>
+<br/><br/>
+<h3><%= l(:label_attachment_plural) %></h3>
+<div id="position-issues">
+  <%= render :partial => 'positions/attachments/list', :locals => { :position => @position }%>
+</div>
+
+<% html_title(l(:position_view)) -%>

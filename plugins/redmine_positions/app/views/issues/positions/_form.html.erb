@@ -1,0 +1,21 @@
+<%= error_messages_for 'position' %>
+	
+<%= form_for "position", {:as => :position, :remote => true,
+     :url => issue_add_position_path(@issue),
+     :method => :post,
+     :html => {:id => 'new-position-form', :style => (@position ? '' : 'display: none;')}} do |f| %>
+       
+<table>
+  <tr>
+    <td><%= l(:choose_position) %></td>
+		<td><%= select( 'position', 'position_id', @positions.map {|u| [u.nombre,u.id]} ) %></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <%= submit_tag l(:button_add) %>
+      <%= toggle_link l(:button_cancel), 'new-position-form'%>
+    </td>
+  </tr>
+</table>
+
+<% end %>

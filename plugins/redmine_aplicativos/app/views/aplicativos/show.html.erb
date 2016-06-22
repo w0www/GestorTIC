@@ -1,0 +1,30 @@
+<% if authorize_for_with_global(:aplicativos, :edit, true) %>
+	<div class="contextual">
+	  <%= link_to(l(:aplicativo_edit), edit_aplicativo_path, :class => 'icon icon-edit') %>
+	</div>
+<% end %>
+<h2><%= link_to l(:aplicativos), :controller => 'aplicativos', :action => 'index' %> &#187; <%= @aplicativo.nombre %> (<%= @aplicativo.codigo %>)</h2>
+
+<div id="aplicativo-show">
+  <%= render :partial => 'datos_oficina', :locals => { :aplicativo => @aplicativo }%>
+</div>
+
+
+<br/><br/>
+
+<h3><%= l(:label_member_plural) %></h3>
+<div id="aplicativo-contacts">
+  <%= render :partial => 'aplicativos/users/list', :locals => { :aplicativo => @aplicativo }%>
+</div>
+<br/><br/>
+<h3><%= l(:label_issue_plural) %></h3>
+<div id="aplicativo-issues">
+  <%= render :partial => 'aplicativos/issues/list', :locals => { :aplicativo => @aplicativo }%>
+</div>
+<br/><br/>
+<h3><%= l(:label_attachment_plural) %></h3>
+<div id="aplicativo-issues">
+  <%= render :partial => 'aplicativos/attachments/list', :locals => { :aplicativo => @aplicativo }%>
+</div>
+
+<% html_title(l(:aplicativo_view)) -%>

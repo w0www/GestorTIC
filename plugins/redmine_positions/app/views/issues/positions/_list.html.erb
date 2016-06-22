@@ -1,0 +1,33 @@
+<% if issue.positions.any? %>
+  <div class="wiki">
+    <% issue.positions.each do |position| %>
+      <table class="list" style="border: 0px!important;  border-collapse: separate!important;">
+        <tr>
+          <strong><%= link_to(position.nombre, position, :id => position) %></strong>
+          <% if authorize_for('positions', 'removeissue') %>
+            <span style="margin-left:10px;"><%= delete_link issue_remove_position_path(issue, position), :remote => true %></span>
+          <% end %>
+        </tr>
+        <tr>
+          <td><strong><%= l('field_nombre') %>:</strong> <%= position.nombre %></td>
+          <td><strong><%= l('field_codigo') %>:</strong> <%= position.codigo %></td>
+        </tr> 
+        <tr> 
+          <td><strong><%= l('field_direccion') %>:</strong> <%= position.direccion %></td>
+          <td><strong><%= l('field_direccion2') %>:</strong> <%= position.direccion2 %></td>
+        </tr> 
+        <tr> 
+          <td><strong><%= l('field_telefono') %>:</strong> <%= position.telefono %></td>
+          <td><strong><%= l('field_email_oficina') %>:</strong> <%= position.email_oficina %></td>
+        </tr> 
+      </table>
+      <br/><br/>
+    <% end %>
+  </div>
+<% else %>
+  <div class="wiki">
+    <ul>
+      <li><em><%= l(:label_none) %></em></li>
+    </ul>
+  </div>
+<% end %>

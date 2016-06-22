@@ -1,0 +1,21 @@
+<%= error_messages_for 'aplicativo' %>
+	
+<%= form_for "aplicativo", {:as => :aplicativo, :remote => true,
+     :url => issue_add_aplicativo_path(@issue),
+     :method => :post,
+     :html => {:id => 'new-aplicativo-form', :style => (@aplicativo ? '' : 'display: none;')}} do |f| %>
+       
+<table>
+  <tr>
+    <td><%= l(:choose_aplicativo) %></td>
+		<td><%= select( 'aplicativo', 'aplicativo_id', @aplicativos.map {|u| [u.nombre,u.id]} ) %></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <%= submit_tag l(:button_add) %>
+      <%= toggle_link l(:button_cancel), 'new-aplicativo-form'%>
+    </td>
+  </tr>
+</table>
+
+<% end %>

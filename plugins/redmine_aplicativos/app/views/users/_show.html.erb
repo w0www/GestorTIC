@@ -1,0 +1,6 @@
+<h3><%= l('aplicativo') %></h3>
+<% if @user.aplicativo %>
+  <ul><li><%= link_to(@user.aplicativo.nombre, @user.aplicativo, :id => @user.aplicativo) %></li></ul>
+<else>
+  <ul><%= l('not_aplicativo') %></ul>
+<% end %>

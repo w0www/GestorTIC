@@ -1,0 +1,10 @@
+<h2><%= link_to l(:aplicativos), :controller => 'aplicativos', :action => 'index' %> &#187; <%= link_to "#{@aplicativo.nombre} (#{@aplicativo.codigo})", @aplicativo %> &#187; <%= l(:aplicativo_edit) %></h2>
+
+<%= render :partial => 'form' %>
+  <h3><%= l(:label_member_plural) %></h3>
+  <div id="aplicativos-users-form">
+    <%= render :partial => 'aplicativos/users/form' %>
+  </div>
+<% html_title(l(:aplicativo_edit)) -%>
+
+

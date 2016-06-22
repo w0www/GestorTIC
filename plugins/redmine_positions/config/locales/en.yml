@@ -1,16 +1,16 @@
 # English strings go here for Rails i18n
 en:
-  departments: Departments
-  department: Department
-  department_new: New Department
-  department_edit: Edit Department
-  department_view: View Department
-  department_information: Department Information
-  department_update: Department updated!
-  department_remove: Department removed!
-  department_not_delete: Couldn't delete department
-  not_department: Wihout Department
-  field_department: Department
+  positions: Positions
+  position: Position
+  position_new: New Position
+  position_edit: Edit Position
+  position_view: View Position
+  position_information: Position Information
+  position_update: Position updated!
+  position_remove: Position removed!
+  position_not_delete: Couldn't delete position
+  not_position: Wihout Position
+  field_position: Position
 
   field_name: Name
   field_codigo: Code
@@ -34,14 +34,14 @@ en:
   field_issues: Issues
   field_remove: Remove
 
-  hold_multiselect: "To select multiple departments, hold %{key}"
+  hold_multiselect: "To select multiple positions, hold %{key}"
   multi_select_key_command: Command
   multi_select_key_control: Control
 
   confirm: Are you sure?
   link_cancel: Cancel
-  link_create: Create Department
-  link_save: Save Department
+  link_create: Create Position
+  link_save: Save Position
 
   field_issues_id: ID
   field_issues_subject: Subject
@@ -56,4 +56,4 @@ en:
   field_attachment_remove: Remove
 
   notice_failed_to_save_members: Failed to save, please select a member.
-  choose_department: "Choose Department:"
+  choose_position: "Choose Position:"

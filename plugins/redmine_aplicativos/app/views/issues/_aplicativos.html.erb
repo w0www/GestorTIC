@@ -1,0 +1,21 @@
+<% @aplicativos = Aplicativo.all %>
+<div id="aplicativos">
+  <hr />
+  <div class="contextual">
+    <% if authorize_for('aplicativos', 'addissue') %>
+      <%= toggle_link l(:button_add), 'new-aplicativo-form' %>
+    <% end %>
+  </div>
+
+  <p><strong><%= l(:aplicativos) %></strong></p>
+
+  <div id="issue-aplicativos">
+    <%= render :partial => 'issues/aplicativos/list', :locals => {:issue => @issue} %>
+  </div>
+
+  <% if authorize_for('aplicativos', 'addissue') %>
+    <%= render :partial => 'issues/aplicativos/form', :locals => {:issue => @issue}%>
+  <% end %>
+
+</div>
+

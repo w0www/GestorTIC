@@ -1,0 +1,6 @@
+<h3><%= l('position') %></h3>
+<% if @user.position %>
+  <ul><li><%= link_to(@user.position.nombre, @user.position, :id => @user.position) %></li></ul>
+<else>
+  <ul><%= l('not_position') %></ul>
+<% end %>

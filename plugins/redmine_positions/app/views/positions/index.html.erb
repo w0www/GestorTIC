@@ -1,0 +1,13 @@
+<% if authorize_for_with_global('positions', 'new', true) %>
+	<div class="contextual">
+  	<%= link_to(l(:position_new), new_position_path, :class => 'icon icon-position-add') %>
+	</div>
+<% end %>
+<h2><%= l(:positions) %></h2>
+<% if authorize_for_with_global('positions', 'index', true) %>
+  <div id="positions">
+    <%= render :partial => 'list' %>
+    <p class="pagination"><%= pagination_links_full @positions_pages, @positions_count %></p>
+  </div>
+<% end %>
+<% html_title(l(:positions)) -%>

@@ -1,16 +1,16 @@
 # English strings go here for Rails i18n
 en:
-  departments: Departments
-  department: Department
-  department_new: New Department
-  department_edit: Edit Department
-  department_view: View Department
-  department_information: Department Information
-  department_update: Department updated!
-  department_remove: Department removed!
-  department_not_delete: Couldn't delete department
-  not_department: Wihout Department
-  field_department: Department
+  aplicativos: Aplicativos
+  aplicativo: Aplicativo
+  aplicativo_new: New Aplicativo
+  aplicativo_edit: Edit Aplicativo
+  aplicativo_view: View Aplicativo
+  aplicativo_information: Aplicativo Information
+  aplicativo_update: Aplicativo updated!
+  aplicativo_remove: Aplicativo removed!
+  aplicativo_not_delete: Couldn't delete aplicativo
+  not_aplicativo: Wihout Aplicativo
+  field_aplicativo: Aplicativo
 
   field_name: Name
   field_codigo: Code
@@ -34,14 +34,14 @@ en:
   field_issues: Issues
   field_remove: Remove
 
-  hold_multiselect: "To select multiple departments, hold %{key}"
+  hold_multiselect: "To select multiple aplicativos, hold %{key}"
   multi_select_key_command: Command
   multi_select_key_control: Control
 
   confirm: Are you sure?
   link_cancel: Cancel
-  link_create: Create Department
-  link_save: Save Department
+  link_create: Create Aplicativo
+  link_save: Save Aplicativo
 
   field_issues_id: ID
   field_issues_subject: Subject
@@ -56,4 +56,4 @@ en:
   field_attachment_remove: Remove
 
   notice_failed_to_save_members: Failed to save, please select a member.
-  choose_department: "Choose Department:"
+  choose_aplicativo: "Choose Aplicativo:"

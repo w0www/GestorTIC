@@ -1,0 +1,5 @@
+<% if (@source == 'position') %>
+$('#position-issues').html('<%= escape_javascript(render(:partial => 'positions/issues/list', :locals => {:position => @position})) %>');
+<% elsif (@source == 'issue') %>
+$('#issue-positions').html('<%= escape_javascript(render(:partial => 'issues/positions/list', :locals => {:position => @position, :issue => @issue, :project => @project})) %>');
+<% end %>

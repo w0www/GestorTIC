@@ -1,0 +1,5 @@
+<% if (@source == 'aplicativo') %>
+$('#aplicativo-issues').html('<%= escape_javascript(render(:partial => 'aplicativos/issues/list', :locals => {:aplicativo => @aplicativo})) %>');
+<% elsif (@source == 'issue') %>
+$('#issue-aplicativos').html('<%= escape_javascript(render(:partial => 'issues/aplicativos/list', :locals => {:aplicativo => @aplicativo, :issue => @issue, :project => @project})) %>');
+<% end %>

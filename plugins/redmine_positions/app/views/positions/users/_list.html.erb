@@ -1,0 +1,9 @@
+<table class="list">
+  <tbody>
+    <%- @position.users.each do |user| %>
+      <tr>
+      <td class="<%= user.class.name.downcase %>"><%= link_to_user user %></td>
+    </tr>
+    <%- end %>
+  </tbody>
+</table>

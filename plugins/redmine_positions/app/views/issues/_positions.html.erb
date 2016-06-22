@@ -1,0 +1,21 @@
+<% @positions = Position.all %>
+<div id="positions">
+  <hr />
+  <div class="contextual">
+    <% if authorize_for('positions', 'addissue') %>
+      <%= toggle_link l(:button_add), 'new-position-form' %>
+    <% end %>
+  </div>
+
+  <p><strong><%= l(:positions) %></strong></p>
+
+  <div id="issue-positions">
+    <%= render :partial => 'issues/positions/list', :locals => {:issue => @issue} %>
+  </div>
+
+  <% if authorize_for('positions', 'addissue') %>
+    <%= render :partial => 'issues/positions/form', :locals => {:issue => @issue}%>
+  <% end %>
+
+</div>
+

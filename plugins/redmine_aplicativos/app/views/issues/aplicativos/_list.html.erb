@@ -1,0 +1,33 @@
+<% if issue.aplicativos.any? %>
+  <div class="wiki">
+    <% issue.aplicativos.each do |aplicativo| %>
+      <table class="list" style="border: 0px!important;  border-collapse: separate!important;">
+        <tr>
+          <strong><%= link_to(aplicativo.nombre, aplicativo, :id => aplicativo) %></strong>
+          <% if authorize_for('aplicativos', 'removeissue') %>
+            <span style="margin-left:10px;"><%= delete_link issue_remove_aplicativo_path(issue, aplicativo), :remote => true %></span>
+          <% end %>
+        </tr>
+        <tr>
+          <td><strong><%= l('field_nombre') %>:</strong> <%= aplicativo.nombre %></td>
+          <td><strong><%= l('field_codigo') %>:</strong> <%= aplicativo.codigo %></td>
+        </tr> 
+        <tr> 
+          <td><strong><%= l('field_direccion') %>:</strong> <%= aplicativo.direccion %></td>
+          <td><strong><%= l('field_direccion2') %>:</strong> <%= aplicativo.direccion2 %></td>
+        </tr> 
+        <tr> 
+          <td><strong><%= l('field_telefono') %>:</strong> <%= aplicativo.telefono %></td>
+          <td><strong><%= l('field_email_oficina') %>:</strong> <%= aplicativo.email_oficina %></td>
+        </tr> 
+      </table>
+      <br/><br/>
+    <% end %>
+  </div>
+<% else %>
+  <div class="wiki">
+    <ul>
+      <li><em><%= l(:label_none) %></em></li>
+    </ul>
+  </div>
+<% end %>

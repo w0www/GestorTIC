@@ -160,11 +160,11 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
     respond_to do |format|
       if @department.destroy
-        flash[:notice] = "Department removed!"
+        flash[:notice] = l('department_removed')
         format.html { redirect_to :controller => 'departments', :action => 'index', :per_page => params[:per_page], :page => params[:page] }
         format.js { render(:update) { |page| page.replace_html "departments", :partial => 'departments/list', :locals => {:departments => @departments } } }
       else
-        flash[:error] = "Couldn't delete department"
+        flash[:notice] = l('department_not_removed')
         format.html { redirect_to :controller => 'departments', :action => 'index' }
         format.js { render(:update) { |page| page.replace_html "departments", :partial => 'departments/list', :locals => {:departments => @departments } } }          
       end

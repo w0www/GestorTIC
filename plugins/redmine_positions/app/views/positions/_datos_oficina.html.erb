@@ -1,0 +1,34 @@
+<div>
+<table style="width:100%; font-size:18px;">
+  <tbody> 
+    <tr>
+      <td><strong><%= l('field_nombre') %>:</strong> <%= @position.nombre %></td>
+      <td><strong><%= l('field_codigo') %>:</strong> <%= @position.codigo %></td>
+    </tr> 
+    <tr> 
+      <td><strong><%= l('field_direccion') %>:</strong> <%= @position.direccion %></td>
+      <td><strong><%= l('field_direcion2') %>:</strong> <%= @position.direccion2 %></td>
+    </tr> 
+    <tr> 
+      <td><strong><%= l('field_telefono') %>:</strong> <%= @position.telefono %></td>
+      <td><strong><%= l('field_email_oficina') %>:</strong> <%= @position.email_oficina %></td>
+      <td><strong><%= l('field_telefono_vigilante') %>:</strong> <%= @position.telefono_vigilante %></td>
+    </tr> 
+    <tr>
+      <td><strong><%= l('field_responsable') %>:</strong> <%= @position.responsable.blank? ? "" : link_to(@position.responsable, user_path(@position.responsable)) %> </td>
+      <td><strong><%= l('field_coordinador') %>:</strong> <%= @position.coordinador.blank? ? "" : link_to(@position.coordinador, user_path(@position.coordinador)) %></td>
+    </tr>
+    <tr> 
+      <td><strong><%= l('field_responsable_sepe') %>:</strong> <%= @position.responsable_sepe %></td>
+      <td><strong><%= l('field_telefono_responsable_sepe') %>:</strong> <%= @position.telefono_responsable_sepe %></td>
+      <td><strong><%= l('field_email_responsable_sepe') %>:</strong> <%= @position.email_responsable_sepe %></td>
+    </tr> 
+    <tr>
+      <td><strong><%= l('field_anotaciones') %></strong><br/> <%= @position.anotaciones %></td>
+    </tr> 
+  </tbody> 
+</table>
+<div>
+
+
+

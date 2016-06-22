@@ -1,0 +1,10 @@
+<h2><%= link_to l(:positions), :controller => 'positions', :action => 'index' %> &#187; <%= link_to "#{@position.nombre} (#{@position.codigo})", @position %> &#187; <%= l(:position_edit) %></h2>
+
+<%= render :partial => 'form' %>
+  <h3><%= l(:label_member_plural) %></h3>
+  <div id="positions-users-form">
+    <%= render :partial => 'positions/users/form' %>
+  </div>
+<% html_title(l(:position_edit)) -%>
+
+

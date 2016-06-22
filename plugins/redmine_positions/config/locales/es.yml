@@ -1,16 +1,16 @@
 # Spanish strings go here for Rails i18n
 en:
-  departments: Oficinas
-  department: Oficina
-  department_new: Nueva Oficina
-  department_edit: Editar Oficina
-  department_view: Ver Oficina
-  department_information: Información Oficina
-  department_update: Oficina Actualizada!
-  department_remove: Oficina Eliminada!
-  department_not_delete: No es posible borrar la oficina
-  not_department: Sin Oficina
-  field_department: Oficina
+  positions: Puestos
+  position: Puesto
+  position_new: Nueva Puesto
+  position_edit: Editar Puesto
+  position_view: Ver Puesto
+  position_information: Información Puesto
+  position_update: Puesto Actualizada!
+  position_remove: Puesto Eliminada!
+  position_not_delete: No es posible borrar la oficina
+  not_position: Sin Puesto
+  field_position: Puesto
 
 
   field_codigo: Código
@@ -34,14 +34,14 @@ en:
   field_issues: Peticiones
   field_remove: Borrar
 
-  hold_multiselect: "Para seleccionar varias oficinas, presiona %{key}"
+  hold_multiselect: "Para seleccionar varias puestos, presiona %{key}"
   multi_select_key_command: Command
   multi_select_key_control: Control
 
   confirm: Estás seguro?
   link_cancel: Cancelar
-  link_create: Crear Oficina
-  link_save: Guardar Oficina
+  link_create: Crear Puesto
+  link_save: Guardar Puesto
 
   field_issues_id: ID
   field_issues_subject: Asunto
@@ -56,4 +56,4 @@ en:
   field_attachment_remove: Borrar
 
   notice_failed_to_save_members: Error al guardar, seleccione miembros
-  choose_department: "Elije oficina:"
+  choose_position: "Elije oficina:"

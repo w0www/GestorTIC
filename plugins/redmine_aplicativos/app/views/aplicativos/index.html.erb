@@ -1,0 +1,13 @@
+<% if authorize_for_with_global('aplicativos', 'new', true) %>
+	<div class="contextual">
+  	<%= link_to(l(:aplicativo_new), new_aplicativo_path, :class => 'icon icon-aplicativo-add') %>
+	</div>
+<% end %>
+<h2><%= l(:aplicativos) %></h2>
+<% if authorize_for_with_global('aplicativos', 'index', true) %>
+  <div id="aplicativos">
+    <%= render :partial => 'list' %>
+    <p class="pagination"><%= pagination_links_full @aplicativos_pages, @aplicativos_count %></p>
+  </div>
+<% end %>
+<% html_title(l(:aplicativos)) -%>

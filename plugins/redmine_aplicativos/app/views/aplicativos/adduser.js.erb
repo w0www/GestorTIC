@@ -1,0 +1,11 @@
+$('#aplicativos-users-form').html('<%= escape_javascript(render :partial => 'aplicativos/users/form') %>');
+hideOnLoad();
+
+<% if @members.present? %>
+  <% for m in @members %>
+    $("#member-<%= m.first.id %>").effect("highlight");
+  <% end %>
+<% else %>
+  <% errors = @members.collect {|m| m.errors.full_messages}.flatten.uniq.join(', ') %>
+  alert('<%= raw(escape_javascript(l(:notice_failed_to_save_members, :errors => errors))) %>');
+<% end %>

@@ -1,0 +1,27 @@
+<table class="list">
+	<thead style="text-align:center;">
+    <tr>
+      <th style="width:200px;"><%= l('field_attachment_nombre') %></th>
+      <th style="width:200px;">Descripción</th>
+      <th style="width:200px;">Tamaño</th>
+      <th style="width:200px;">Fecha Creación</th>
+      <th style="width:200px;">Autor</th>
+      <th style="width:200px;">Borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @position.attachments.each do |attachment| %>
+    <tr>
+      <td><%= link_to_attachment attachment, :class => 'icon icon-attachment', :download => true -%></td>
+      <td><%= attachment.description %></td>
+      <td><%= number_to_human_size attachment.filesize %></td>
+      <td><%= format_time(attachment.created_on) %></td>
+      <td><%= link_to(attachment.author, attachment_path(attachment.author)) %></td>
+      <td><%= link_to 'Borrar', "#{@position.id}/#{attachment.id}/delete",
+                :data => {:confirm => l(:text_are_you_sure)},
+                :class => 'icon icon-del' %> </td>
+    </tr>
+    <%- end %>
+  </tbody>
+</table>
+
