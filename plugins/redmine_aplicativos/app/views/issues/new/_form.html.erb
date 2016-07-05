@@ -1,6 +1,0 @@
-<% multi_select_key = request.headers["User-Agent"].match(/Mac OS X/) ? l(:multi_select_key_command) : l(:multi_select_key_control) %>
-<p>
-  <label><%= l(:aplicativos) %></label>
-  <%= select('issue', 'aplicativo_ids', Aplicativo.all.sort_by(&:nombre).collect {|d| [ d.nombre, d.id ] }, {}, {:size => 7, :multiple => :multiple } ) %><br />
-  <span style="font-size:75%"><%= l(:hold_multiselect, :key => multi_select_key) %></span>
-</p>

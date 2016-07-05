@@ -10,26 +10,13 @@ en:
   aplicativo_remove: Aplicativo removed!
   aplicativo_not_delete: Couldn't delete aplicativo
   not_aplicativo: Wihout Aplicativo
-  field_aplicativo: Aplicativo
+  
 
-  field_name: Name
+  field_aplicativo: App
   field_codigo: Code
   field_nombre: Name
-  field_direccion: Address
-  field_direccion2: SubAddress
-  field_codigo_postal: Postal Code
-  field_localidad: City
-  field_territorio: Province
-  field_telefono: Telephone
-  field_fax: Fax 
-  field_email_oficina: Email
-  field_telefono_vigilante: SecurityGuard Telephone
-  field_responsable: Responsible
-  field_coordinador: Coordinator
-  field_responsable_sepe: SEPE Responsible
-  field_email_responsable_sepe: SEPE Responsible Email
-  field_telefono_responsable_sepe: SEPE Responsible Telephone
-  field_anotaciones: Annotations
+  field_descripcion: Description
+
   field_members: Members
   field_issues: Issues
   field_remove: Remove

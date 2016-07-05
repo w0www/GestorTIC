@@ -3,8 +3,6 @@
     <tr>
       <th><%= l('field_nombre') %></th>
       <th><%= l('field_codigo') %></th>
-      <th><%= l('field_members') %></th>
-      <th><%= l('field_issues') %></th>
 			<% if authorize_for_with_global(:aplicativos, :delete, true) %>
       <th><%= l('field_remove') %></th>
 				<% end %>
@@ -15,8 +13,6 @@
       <tr class="<%= cycle("odd", "even") %>">
 				<td><%= link_to(aplicativo.nombre, aplicativo, :id => aplicativo) %></td>
 				<td><%= aplicativo.codigo %></td>
-				<td><%= aplicativo.users.count %></td>
-				<td><%= aplicativo.issues.count %></td>
 				<% if authorize_for_with_global(:aplicativos, :delete, true) %>
         <td style="border: 0; padding: 0;">
           <%= link_to(image_tag('delete.png'), aplicativo_path(aplicativo,:per_page => params[:per_page], :page => params[:page]), :confirm => l('confirm'), :method => :delete) %>

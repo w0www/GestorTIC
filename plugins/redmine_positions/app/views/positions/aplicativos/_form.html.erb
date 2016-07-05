@@ -1,0 +1,45 @@
+<%= error_messages_for 'aplicativ' %>
+<% aplicativs = @position.aplicativos.sort %>
+
+<div class="splitcontentleft">
+  <% if aplicativs.any? %>
+    <table class="list aplicativs">
+	    <thead><tr>
+	      <th><%= l(:label_user) %> / <%= l(:label_group) %></th>
+	    </tr></thead>
+	    <tbody>
+	      <% aplicativs.each do |aplicativo| %>
+	        <% next if aplicativo.new_record? %>
+	        <tr id="aplicativo-<%= aplicativo.id %>" class="<%= cycle 'odd', 'even' %> aplicativo">
+	          <td class="<%= aplicativo.class.name.downcase %>"><%= link_to_user aplicativo %></td>
+            <% if authorize_for_with_global :positions, :removecontact, true %>
+              <td class="buttons">
+                <%= delete_link position_remove_aplicativo_path(@position, aplicativo), :remote => true %>
+              </td>
+            <% end %>
+	        </tr>
+        <% end; reset_cycle %>
+	    </tbody>
+    </table>
+  <% else %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+  <% end %>
+</div>
+
+<% principals = Aplicativo.all.to_a - @position.aplicativos %>
+
+<div class="splitcontentright">
+  <% if principals.any? %>
+    <%= form_for "aplicativo", 
+    {:as => :aplicativo, :remote => true, :url => position_add_aplicativo_path(@position), :method => :post, 
+    :loading => "$('aplicativo-add-submit').disable()",:complete => "$('aplicativo-add-submit').enable()"} do |f| %>
+      <fieldset>
+        <legend><%=l(:label_aplicativo_new)%></legend> 
+		    <div id="principals_for_new_aplicativo">
+			    <%= principals_check_box_tags 'aplicativo[positions_ids][]', principals %>
+		    </div>
+        <p><%= submit_tag l(:button_add), :id => 'aplicativo-add-submit' %></p>
+		  </fieldset>
+    <% end %>
+  <% end %>
+</div>

@@ -11,14 +11,14 @@
         <tr>
           <td><strong><%= l('field_nombre') %>:</strong> <%= position.nombre %></td>
           <td><strong><%= l('field_codigo') %>:</strong> <%= position.codigo %></td>
+          <td><strong><%= l('field_descripcion') %>:</strong> <%= position.descripcion %></td>
         </tr> 
-        <tr> 
-          <td><strong><%= l('field_direccion') %>:</strong> <%= position.direccion %></td>
-          <td><strong><%= l('field_direccion2') %>:</strong> <%= position.direccion2 %></td>
-        </tr> 
-        <tr> 
-          <td><strong><%= l('field_telefono') %>:</strong> <%= position.telefono %></td>
-          <td><strong><%= l('field_email_oficina') %>:</strong> <%= position.email_oficina %></td>
+        <tr>
+          <td><strong><%= l('field_aplicativos') %>:</strong><br/>
+          <% position.aplicativos.each do |a| %>
+            <%= a.nombre %><br/>
+          <% end %>
+        </tr>
         </tr> 
       </table>
       <br/><br/>

@@ -1,0 +1,11 @@
+<table class="list">
+  <tbody>
+    <%- @position.aplicativos.each do |aplicativo| %>
+      <tr>
+      <td class="<%= aplicativo.class.name.downcase %>">
+        <%= link_to(aplicativo.nombre, aplicativo, :id => aplicativo.id) %>
+      </td>
+    </tr>
+    <%- end %>
+  </tbody>
+</table>

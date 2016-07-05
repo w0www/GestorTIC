@@ -1,0 +1,14 @@
+<% multi_select_key = request.headers["User-Agent"].match(/Mac OS X/) ? l(:multi_select_key_command) : l(:multi_select_key_control) %>
+<% 
+  if params[:issue] && params[:issue][:position_ids] && params[:issue][:position_ids] != ""
+    selected_position = params[:issue][:position_ids]
+  else
+    selected_position = ""
+  end
+%>
+<p>
+  <label><%= l(:positions) %></label>
+  <%= select('issue', 'position_ids', Position.all.sort_by(&:nombre).collect {|d| [ d.nombre, d.id ] }, {:include_blank => true, :selected => selected_position}, :onchange => "updateIssueFrom('/projects/gestion-de-personas/issues/new.js')") %><br />
+  <span style="font-size:75%"><%= l(:hold_multiselect, :key => multi_select_key) %></span>
+</p>
+

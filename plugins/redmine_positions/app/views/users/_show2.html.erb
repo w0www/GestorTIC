@@ -1,0 +1,6 @@
+<span style="font-size:18px;"><%= l('position') %>:</span>
+<% if @user.position %>
+  <%= link_to(@user.position.nombre, @user.position, :id => @user.position) %>
+<% else %>
+  <ul><%= l('not_position') %></ul>
+<% end %>

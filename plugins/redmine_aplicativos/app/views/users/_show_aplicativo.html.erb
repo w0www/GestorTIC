@@ -1,0 +1,18 @@
+<h3><%= l('aplicativos') %>: </h3>
+<% aplicativos = @user.position.aplicativos if @user.position %>
+<% 
+if @user.aplicativos.count > 0
+  if aplicativos
+    aplicativos << @user.aplicativos 
+  else
+    aplicativos = @user.aplicativos 
+  end 
+end
+%>
+<% if aplicativos %>
+  <% for a in aplicativos.uniq %>
+    <ul><li><%= link_to(a.nombre, a, :id => a) %></li></ul>
+  <% end %>
+<% else %>
+  <%= l('not_aplicativo') %>
+<% end %>

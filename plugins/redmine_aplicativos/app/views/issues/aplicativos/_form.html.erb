@@ -8,7 +8,7 @@
 <table>
   <tr>
     <td><%= l(:choose_aplicativo) %></td>
-		<td><%= select( 'aplicativo', 'aplicativo_id', @aplicativos.map {|u| [u.nombre,u.id]} ) %></td>
+		<td><%= select('aplicativo', 'aplicativo_ids', @aplicativos.map {|u| [u.nombre,u.id]}, {}, {:size => 7, :multiple => :multiple } ) %></td>
   </tr>
   <tr>
     <td colspan="2">

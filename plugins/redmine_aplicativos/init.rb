@@ -17,7 +17,6 @@ Redmine::Plugin.register :redmine_aplicativos do
     
   menu :top_menu, :aplicativos, { :controller => :aplicativos, :action => :index }, :caption => :aplicativos, :if => Proc.new{ User.current.logged? }
   menu :admin_menu, :aplicativos, {:controller => :aplicativos, :action => :index }, :caption => :aplicativos
-  permission :view_attachments, {:attachments => [:edit,:show, :download, :thumbnail, :upload, :update, :destroy]}
 
   project_module :aplicativos do |map|
     map.permission :view_aplicativos, { :aplicativos => [:index, :show] }

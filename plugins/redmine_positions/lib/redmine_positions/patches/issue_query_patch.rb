@@ -19,7 +19,7 @@ module RedminePositions
 
       module InstanceMethods
         def joins_for_order_statement_with_positions(order_options)
-          joins = joins_for_order_statement_without_positions(order_options)
+          joins = joins_for_order_statement_without_departments(order_options)
           if order_options
             if order_options.include?("#{Position.table_name}")
               joins = "" if joins.nil?
@@ -37,7 +37,7 @@ module RedminePositions
             sql_for_field(field, '=', value, db_table, 'position_id') + ')'
         end
 
-        # Wrapper around the +available_filters+ to add a new Positions filter
+        # Wrapper around the +available_filters+ to add a new Departments filter
         def initialize_available_filters_with_positions
           initialize_available_filters_without_positions
           add_available_filter "position_id",

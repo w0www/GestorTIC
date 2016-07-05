@@ -1,4 +1,5 @@
 <p>
   <label for="user_position_id"><%= l(:position) %></label>
   <%= select_tag "user[position_id]", options_for_select(Position.all.collect{ |d| [d.nombre, d.id] }, selected: @user.position_id ), :include_blank => true %>
+  <br/>
 </p>

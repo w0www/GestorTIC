@@ -6,10 +6,13 @@ class AddDepartments < ActiveRecord::Migration
       t.string "descripcion", :limit => 100, :null => false
     end
 
+    add_column :users, :position_id, :integer
+  end
 
   def self.down
 
     drop_table :positions
 
+    remove_column :users, :position_id
   end
 end

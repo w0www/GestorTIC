@@ -17,14 +17,9 @@
   <%= render :partial => 'positions/users/list', :locals => { :position => @position }%>
 </div>
 <br/><br/>
-<h3><%= l(:label_issue_plural) %></h3>
-<div id="position-issues">
-  <%= render :partial => 'positions/issues/list', :locals => { :position => @position }%>
+<h3><%= l(:label_aplicativo_plural) %></h3>
+<div id="position-contacts">
+  <%= render :partial => 'positions/aplicativos/list', :locals => { :position => @position }%>
 </div>
 <br/><br/>
-<h3><%= l(:label_attachment_plural) %></h3>
-<div id="position-issues">
-  <%= render :partial => 'positions/attachments/list', :locals => { :position => @position }%>
-</div>
-
 <% html_title(l(:position_view)) -%>

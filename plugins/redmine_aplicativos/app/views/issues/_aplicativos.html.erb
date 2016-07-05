@@ -7,15 +7,15 @@
     <% end %>
   </div>
 
-  <p><strong><%= l(:aplicativos) %></strong></p>
+  <p><strong>1. <%= l(:aplicativos) %></strong></p>
 
   <div id="issue-aplicativos">
     <%= render :partial => 'issues/aplicativos/list', :locals => {:issue => @issue} %>
   </div>
+    <% if authorize_for('aplicativos', 'addissue') %>
+      <%= render :partial => 'issues/aplicativos/form', :locals => {:issue => @issue}%>
+    <% end %>
 
-  <% if authorize_for('aplicativos', 'addissue') %>
-    <%= render :partial => 'issues/aplicativos/form', :locals => {:issue => @issue}%>
-  <% end %>
 
 </div>
 

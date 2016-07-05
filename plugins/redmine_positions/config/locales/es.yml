@@ -1,47 +1,37 @@
 # Spanish strings go here for Rails i18n
 en:
-  positions: Puestos
-  position: Puesto
-  position_new: Nueva Puesto
-  position_edit: Editar Puesto
-  position_view: Ver Puesto
-  position_information: Información Puesto
-  position_update: Puesto Actualizada!
-  position_remove: Puesto Eliminada!
+  positions: Monografias
+  position: Monografia
+  position_new: Nueva Monografia
+  position_edit: Editar Monografia
+  position_view: Ver Monografia
+  position_information: Información Monografia
+  position_update: Monografia Actualizada!
+  position_remove: Monografia Eliminada!
   position_not_delete: No es posible borrar la oficina
-  not_position: Sin Puesto
-  field_position: Puesto
+  not_position: Sin Monografia
+  field_position: Monografia
+  field_descripcion: Descripcion
 
+  label_member_plural: Miembros
+  label_aplicativo_plural: Aplicativos
+  label_aplicativo_new: Nuevo aplicativo
 
+  field_aplicativos: Aplicativos
   field_codigo: Código
   field_nombre: Nombre
-  field_direccion: Dirección
-  field_direccion2: SubDirección
-  field_codigo_postal: Código Postal
-  field_localidad: Ciudad
-  field_territorio: Provincia
-  field_telefono: Teléfono
-  field_fax: Fax 
-  field_email_oficina: Correo Electrónico
-  field_telefono_vigilante: Teléfono Vigilante
-  field_responsable: Responsable
-  field_coordinador: Coordinador
-  field_responsable_sepe: Responsable SEPE
-  field_email_responsable_sepe: Correo Responasble SEPE
-  field_telefono_responsable_sepe: Teléfono Responsable SEPE
-  field_anotaciones: Anotaciones
   field_members: Miembros
   field_issues: Peticiones
   field_remove: Borrar
 
-  hold_multiselect: "Para seleccionar varias puestos, presiona %{key}"
+  hold_multiselect: "Para seleccionar varias monografias, presiona %{key}"
   multi_select_key_command: Command
   multi_select_key_control: Control
 
   confirm: Estás seguro?
   link_cancel: Cancelar
-  link_create: Crear Puesto
-  link_save: Guardar Puesto
+  link_create: Crear Monografia
+  link_save: Guardar Monografia
 
   field_issues_id: ID
   field_issues_subject: Asunto
@@ -56,4 +46,4 @@ en:
   field_attachment_remove: Borrar
 
   notice_failed_to_save_members: Error al guardar, seleccione miembros
-  choose_position: "Elije oficina:"
+  choose_position: "Elije monografia:"

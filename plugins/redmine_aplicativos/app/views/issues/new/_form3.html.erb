@@ -1,0 +1,14 @@
+<% multi_select_key = request.headers["User-Agent"].match(/Mac OS X/) ? l(:multi_select_key_command) : l(:multi_select_key_control) %>
+<% 
+  if params[:issue] && params[:issue][:position_ids] && params[:issue][:position_ids] != ""
+    aplicativos = Aplicativo.all - Position.find(params[:issue][:position_ids]).aplicativos
+  else
+    aplicativos = Aplicativo.all
+  end
+%>
+<p>
+  <label><%= l(:aplicativos) %></label>
+  <%= select('issue', 'aplicativo_ids', aplicativos.sort_by(&:nombre).collect {|a| [ a.nombre, a.id ] }, {}, {:size => 7, :multiple => :multiple }) %><br />
+  <span style="font-size:75%"><%= l(:hold_multiselect, :key => multi_select_key) %></span>
+</p>
+

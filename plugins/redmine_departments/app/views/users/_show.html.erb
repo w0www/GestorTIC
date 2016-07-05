@@ -1,6 +1,7 @@
-<h3><%= l('department') %></h3>
+<span style="font-size:18px;"><%= l('department') %>:</span>
 <% if @user.department %>
-  <ul><li><%= link_to(@user.department.nombre, @user.department, :id => @user.department) %></li></ul>
-<else>
+  <%= link_to(@user.department.nombre, @user.department, :id => @user.department) %>
+<% else %>
   <ul><%= l('not_department') %></ul>
 <% end %>
+<br/>

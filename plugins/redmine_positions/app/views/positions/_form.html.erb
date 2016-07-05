@@ -12,72 +12,12 @@
         <td><%= f.text_field :nombre, :size => 40 %></td>
       </tr>
       <tr>
-        <td style="text-align:right;"><%= f.label l(:field_direccion) %>:</td>
-        <td><%= f.text_field :direccion, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_direccion2) %>:</td>
-        <td><%= f.text_field :direccion2, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_codigo_postal) %>:</td>
-        <td><%= f.text_field :codigo_postal, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_localidad) %>:</td>
-        <td><%= f.text_field :localidad, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_territorio) %>:</td>
-        <td><%= f.text_field :territorio, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_telefono) %>:</td>
-        <td><%= f.text_field :telefono, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_fax) %>:</td>
-        <td><%= f.text_field :fax, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_email_oficina) %>:</td>
-        <td><%= f.text_field :email_oficina, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_telefono_vigilante) %>:</td>
-        <td><%= f.text_field :telefono_vigilante, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_responsable) %>:</td>
-        <td><%= select_tag "position[responsable_id]", options_for_select(@members.collect{ |u| [u.name, u.id] }, selected: @position.responsable_id ), :include_blank => true %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_coordinador) %>:</td>
-        <td><%= select_tag "position[coordinador_id]", options_for_select(@members.collect{ |u| [u.name, u.id] }, selected: @position.coordinador_id ), :include_blank => true %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_responsable_sepe) %>:</td>
-        <td><%= f.text_field :responsable_sepe, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_telefono_responsable_sepe) %>:</td>
-        <td><%= f.text_field :telefono_responsable_sepe, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_email_responsable_sepe) %>:</td>
-        <td><%= f.text_field :email_responsable_sepe, :size => 40 %></td>
-      </tr>
-      <tr>
-        <td style="text-align:right;"><%= f.label l(:field_anotaciones) %>:</td>
-        <td><%= f.text_area :anotaciones, size: "100x10" %></td>
+        <td style="text-align:right;"><%= f.label l(:field_descripcion) %>:</td>
+        <td><%= f.text_field :descripcion, :size => 40 %></td>
       </tr>
     </tbody>
   </table>
   <hr />
-  <h3><%= l(:label_attachment_plural) %></h3>
-  <div id="positions-attachments-form">
-    <%= render :partial => 'positions/attachments/form' %>
-  </div>
   <p>
     <%= f.submit "#{f.object.new_record? ? l(:link_create) : l(:link_save)}" %> <%= f.object.new_record? ? link_to(l(:link_cancel), positions_path) : link_to(l(:link_cancel), position_path, :id => @position)  %>
   </p>

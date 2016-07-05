@@ -4,6 +4,9 @@ RedmineApp::Application.routes.draw do
     post 'adduser', :to => 'positions#adduser', :as => :add_member
     delete 'removeuser/:user_id', :to => 'positions#removeuser', :as => :remove_member
     get 'positions/download/:id', :to => 'positions#download', :as => :download_attachment
+    post 'addaplicativo', :to => 'positions#addaplicativo', :as => :add_aplicativo
+    delete 'removeaplicativo/:aplicativo_id', :to => 'positions#removeaplicativo', :as => :remove_aplicativo
+    get 'aplicativos/autocomplete', :to => 'positions#autocomplete_for_aplicativo', :as => :aplicativs_autocomplete
   end
 
   post 'issues/:issue_id/positions', :to => 'positions#addissue', :as => :issue_add_position

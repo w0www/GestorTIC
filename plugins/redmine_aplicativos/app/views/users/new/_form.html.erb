@@ -1,4 +1,0 @@
-<p>
-  <label for="user_aplicativo_id"><%= l(:aplicativo) %></label>
-  <%= select_tag "user[aplicativo_id]", options_for_select(Position.all.collect{ |d| [d.nombre, d.id] }, selected: @user.aplicativo_id ), :include_blank => true %>
-</p>

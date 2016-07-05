@@ -15,7 +15,7 @@ apply_patch do
   require_dependency 'redmine_positions/patches/issue_patch'
   require_dependency 'redmine_positions/patches/application_controller_patch'
   require_dependency 'redmine_positions/patches/issue_query_patch'
-  require_dependency 'redmine_positions/patches/time_report_patch'
+  #require_dependency 'redmine_positions/patches/time_report_patch'
 
   # Redmine Users Patches
   require_dependency 'redmine_positions/patches/user_patch'
@@ -23,3 +23,6 @@ apply_patch do
   # Redmine positions Hooks
   require_dependency 'redmine_positions/hooks/add_position_field'
 end
+
+
+

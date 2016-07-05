@@ -17,7 +17,6 @@ Redmine::Plugin.register :redmine_positions do
     
   menu :top_menu, :positions, { :controller => :positions, :action => :index }, :caption => :positions, :if => Proc.new{ User.current.logged? }
   menu :admin_menu, :positions, {:controller => :positions, :action => :index }, :caption => :positions
-  permission :view_attachments, {:attachments => [:edit,:show, :download, :thumbnail, :upload, :update, :destroy]}
 
   project_module :positions do |map|
     map.permission :view_positions, { :positions => [:index, :show] }

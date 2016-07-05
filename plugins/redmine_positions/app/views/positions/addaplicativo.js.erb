@@ -1,0 +1,11 @@
+$('#positions-aplicativos-form').html('<%= escape_javascript(render :partial => 'positions/aplicativos/form') %>');
+hideOnLoad();
+
+<% if @aplicativs.present? %>
+  <% for a in @aplicativs %>
+    $("#aplicativ-<%= a.first.id %>").effect("highlight");
+  <% end %>
+<% else %>
+  <% errors = @aplicativs.collect {|m| m.errors.full_messages}.flatten.uniq.join(', ') %>
+  alert('<%= raw(escape_javascript(l(:notice_failed_to_save_aplicativs, :errors => errors))) %>');
+<% end %>

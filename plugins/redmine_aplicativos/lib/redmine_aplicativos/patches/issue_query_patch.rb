@@ -37,7 +37,7 @@ module RedmineAplicativos
             sql_for_field(field, '=', value, db_table, 'aplicativo_id') + ')'
         end
 
-        # Wrapper around the +available_filters+ to add a new Aplicativos filter
+        # Wrapper around the +available_filters+ to add a new Departments filter
         def initialize_available_filters_with_aplicativos
           initialize_available_filters_without_aplicativos
           add_available_filter "aplicativo_id",

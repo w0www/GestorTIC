@@ -6,25 +6,15 @@
 <h2><%= link_to l(:aplicativos), :controller => 'aplicativos', :action => 'index' %> &#187; <%= @aplicativo.nombre %> (<%= @aplicativo.codigo %>)</h2>
 
 <div id="aplicativo-show">
-  <%= render :partial => 'datos_oficina', :locals => { :aplicativo => @aplicativo }%>
+  <%= render :partial => 'datos_aplicativo', :locals => { :aplicativo => @aplicativo }%>
 </div>
 
 
 <br/><br/>
-
 <h3><%= l(:label_member_plural) %></h3>
-<div id="aplicativo-contacts">
+<div id="aplicativos-contacts">
   <%= render :partial => 'aplicativos/users/list', :locals => { :aplicativo => @aplicativo }%>
 </div>
 <br/><br/>
-<h3><%= l(:label_issue_plural) %></h3>
-<div id="aplicativo-issues">
-  <%= render :partial => 'aplicativos/issues/list', :locals => { :aplicativo => @aplicativo }%>
-</div>
-<br/><br/>
-<h3><%= l(:label_attachment_plural) %></h3>
-<div id="aplicativo-issues">
-  <%= render :partial => 'aplicativos/attachments/list', :locals => { :aplicativo => @aplicativo }%>
-</div>
 
 <% html_title(l(:aplicativo_view)) -%>

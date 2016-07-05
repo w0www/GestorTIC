@@ -12,7 +12,6 @@ module RedmineDepartments
           unloadable # Send unloadable so it will not be unloaded in development
 
           has_and_belongs_to_many :departments, :join_table => "issue_has_departments"
-          before_create :default_departments
           alias_method_chain :assignable_users, :filter
         end
 
@@ -33,13 +32,6 @@ module RedmineDepartments
           end
         end
         
-        def default_departments
-          if departments.empty? && parent_issue_id && p = Issue.find_by_id(parent_issue_id)
-            self.departments = p.departments
-          elsif departments.empty?
-            self.departments = User.current.departments
-          end
-        end
       end
     end
   end

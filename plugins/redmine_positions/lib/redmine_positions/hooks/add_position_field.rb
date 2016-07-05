@@ -11,7 +11,7 @@ module RedminePositions
       def view_issues_form_details_bottom(context = {})
         if has_permission?(context)
           context[:controller].send(:render_to_string, {
-            :partial => "issues/new/form",
+            :partial => "issues/new/form2",
             :locals => context
           })
         else
@@ -21,21 +21,21 @@ module RedminePositions
 
       def view_users_form(context = {})
           context[:controller].send(:render_to_string, {
-            :partial => "users/new/form",
+            :partial => "users/new/form2",
             :locals => context
           })
       end
 
       def view_my_account(context = {})
           context[:controller].send(:render_to_string, {
-            :partial => "users/new/form",
+            :partial => "users/new/form2",
             :locals => context
           })
       end
 
       def view_account_left_bottom(context = {})
           context[:controller].send(:render_to_string, {
-            :partial => "users/show",
+            :partial => "users/show2",
             :locals => context
           })
       end
@@ -43,7 +43,7 @@ module RedminePositions
       def view_issues_bulk_edit_details_bottom(context = {})
         if has_permission?(context)
           context[:controller].send(:render_to_string, {
-            :partial => "issues/new/form",
+            :partial => "issues/new/form2",
             :locals => context
           })
         else
@@ -88,14 +88,10 @@ module RedminePositions
       end
 
       def set_positions_on_issue(context)
-        if context[:params] && context[:params][:issue] && context[:params][:issue][:position_ids] != [""]
-          # Por alguna razon cuando llega a este punto llega siempre un array [""] y luego el resto. 
-          # Tenemos que quitar ese primer array.
-          array_posiciones = context[:params][:issue][:position_ids] - [""]
-          # Iteramos por el array de oficinas y las introducimos a los departamentos de la issue
-          for o in array_posiciones
-            context[:issue].positions << Position.find(o.to_i)
-          end
+        if context[:params] && context[:params][:issue] && context[:params][:issue][:position_ids] != ""
+          # Por alguna razon cuando llega a este punto llega siempre un array [""] y luego el resto. (llega porque es multilpe)
+            Rails.logger.info "esto es #{context[:params][:issue][:position_ids]}"
+            context[:issue].positions << Position.find(context[:params][:issue][:position_ids].to_i)
         end
         return ''
       end

@@ -1,22 +1,17 @@
 module RedmineAplicativos
   module Patches
-    # Patches Redmine's Users dynamically. Adds a relationship
-    # User +belongs+ to Position
+    # Patches Redmine's Issues dynamically. Adds a relationship
+    # Issue +has_many+ to IssueDepartment
     module UserPatch
       def self.included(base) # :nodoc:
-
-        # base.send(:include, InstanceMethods)
 
         # Same as typing in the class
         base.class_eval do
           unloadable # Send unloadable so it will not be unloaded in development
-          safe_attributes 'aplicativo_id'
-          belongs_to :aplicativo
+          has_and_belongs_to_many :aplicativos, :join_table => "user_has_aplicativos"
         end
-      end
 
-      #module InstanceMethods
-      #end
+      end
     end
   end
 end
