@@ -19,6 +19,6 @@
   </table>
   <hr />
   <p>
-    <%= f.submit "#{f.object.new_record? ? l(:link_create) : l(:link_save)}" %> <%= f.object.new_record? ? link_to(l(:link_cancel), positions_path) : link_to(l(:link_cancel), position_path, :id => @position)  %>
+    <%= f.submit "#{f.object.new_record? ? l(:link_create_position) : l(:link_save_position)}" %> <%= f.object.new_record? ? link_to(l(:link_cancel), positions_path) : link_to(l(:link_cancel), position_path, :id => @position)  %>
   </p>
 <%- end %>

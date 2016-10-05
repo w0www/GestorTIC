@@ -40,8 +40,8 @@ en:
 
   confirm: Are you sure?
   link_cancel: Cancel
-  link_create: Create Department
-  link_save: Save Department
+  link_create_office: Create Department
+  link_save_office: Save Department
 
   field_issues_id: ID
   field_issues_subject: Subject

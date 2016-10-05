@@ -27,8 +27,8 @@ en:
 
   confirm: Are you sure?
   link_cancel: Cancel
-  link_create: Create Aplicativo
-  link_save: Save Aplicativo
+  link_create_aplicativo: Create Aplicativo
+  link_save_aplicativo: Save Aplicativo
 
   field_issues_id: ID
   field_issues_subject: Subject

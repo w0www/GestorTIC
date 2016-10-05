@@ -20,6 +20,6 @@
   <hr />
 
   <p>
-    <%= f.submit "#{f.object.new_record? ? l(:link_create) : l(:link_save)}" %> <%= f.object.new_record? ? link_to(l(:link_cancel), aplicativos_path) : link_to(l(:link_cancel), aplicativo_path, :id => @aplicativo)  %>
+    <%= f.submit "#{f.object.new_record? ? l(:link_create_aplicativo) : l(:link_save_aplicativo)}" %> <%= f.object.new_record? ? link_to(l(:link_cancel), aplicativos_path) : link_to(l(:link_cancel), aplicativo_path, :id => @aplicativo)  %>
   </p>
 <%- end %>

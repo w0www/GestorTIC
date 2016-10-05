@@ -40,8 +40,8 @@ en:
 
   confirm: Estás seguro?
   link_cancel: Cancelar
-  link_create: Crear Oficina
-  link_save: Guardar Oficina
+  link_create_office: Crear Oficina
+  link_save_office: Guardar Oficina
 
   field_issues_id: ID
   field_issues_subject: Asunto

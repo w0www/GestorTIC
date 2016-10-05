@@ -26,8 +26,8 @@ en:
 
   confirm: Are you sure?
   link_cancel: Cancel
-  link_create: Create Position
-  link_save: Save Position
+  link_create_position: Create Position
+  link_save_position: Save Position
 
   field_issues_id: ID
   field_issues_subject: Subject

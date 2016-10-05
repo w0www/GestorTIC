@@ -79,6 +79,6 @@
     <%= render :partial => 'departments/attachments/form' %>
   </div>
   <p>
-    <%= f.submit "#{f.object.new_record? ? l(:link_create) : l(:link_save)}" %> <%= f.object.new_record? ? link_to(l(:link_cancel), departments_path) : link_to(l(:link_cancel), department_path, :id => @department)  %>
+    <%= f.submit "#{f.object.new_record? ? l(:link_create_office) : l(:link_save_office)}" %> <%= f.object.new_record? ? link_to(l(:link_cancel), departments_path) : link_to(l(:link_cancel), department_path, :id => @department)  %>
   </p>
 <%- end %>

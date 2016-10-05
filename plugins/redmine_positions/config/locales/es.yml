@@ -30,8 +30,8 @@ en:
 
   confirm: Estás seguro?
   link_cancel: Cancelar
-  link_create: Crear Monografia
-  link_save: Guardar Monografia
+  link_create_position: Crear monografia
+  link_save_position: Guardar monografia
 
   field_issues_id: ID
   field_issues_subject: Asunto

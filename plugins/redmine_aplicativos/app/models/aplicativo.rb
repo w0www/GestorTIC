@@ -3,7 +3,7 @@ class Aplicativo < ActiveRecord::Base
   has_and_belongs_to_many :positions, :join_table => "aplicativo_has_positions"
   has_and_belongs_to_many :users, :join_table => "user_has_aplicativos"
 
-
+  
 
   cattr_reader :per_page
   @@per_page = 25
@@ -12,4 +12,14 @@ class Aplicativo < ActiveRecord::Base
   def to_s
     nombre
   end
+  
+  
+  def prueba
+    variable = self
+    self.nombre = "patata"
+    self.detalles = "detalles"
+    
+    
+  end
+  
 end

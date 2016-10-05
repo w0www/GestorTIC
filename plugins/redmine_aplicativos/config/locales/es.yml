@@ -28,8 +28,8 @@ en:
 
   confirm: Estás seguro?
   link_cancel: Cancelar
-  link_create: Crear Aplicativo
-  link_save: Guardar Aplicativo
+  link_create_aplicativo: Crear Aplicativo
+  link_save_aplicativo: Guardar Aplicativo
 
   field_issues_id: ID
   field_issues_subject: Asunto
