@@ -78,8 +78,8 @@ module RedmineAplicativos
       end
 
       def set_aplicativos_on_issue(context)
-        if context[:params] && context[:params][:issue] && context[:params][:issue][:aplicativos_ids] != [""]
-          array_aplicativos = context[:params][:issue][:aplicativos_ids] - [""]
+        if context[:params] && context[:params][:issue] && context[:params][:issue][:aplicativo_ids] != [""]
+          array_aplicativos = context[:params][:issue][:aplicativo_ids] - [""]
           # Iteramos por el array de oficinas y las introducimos a los departamentos de la issue
           for a in array_aplicativos
             context[:issue].aplicativos << Aplicativo.find(a.to_i)
