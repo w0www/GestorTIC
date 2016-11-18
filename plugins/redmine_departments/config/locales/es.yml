@@ -17,6 +17,7 @@ en:
   field_nombre: Nombre
   field_direccion: Dirección
   field_direccion2: SubDirección
+  field_direccionip: Rango IP
   field_codigo_postal: Código Postal
   field_localidad: Ciudad
   field_territorio: Provincia

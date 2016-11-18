@@ -13,6 +13,7 @@
       <td><strong><%= l('field_telefono') %>:</strong> <%= @department.telefono %></td>
       <td><strong><%= l('field_email_oficina') %>:</strong> <%= @department.email_oficina %></td>
       <td><strong><%= l('field_telefono_vigilante') %>:</strong> <%= @department.telefono_vigilante %></td>
+      <td><strong><%= l('field_direccionip') %>:</strong> <%= @department.direccionip %></td>
     </tr> 
     <tr>
       <td><strong><%= l('field_responsable') %>:</strong> <%= @department.responsable.blank? ? "" : link_to(@department.responsable, user_path(@department.responsable)) %> </td>
