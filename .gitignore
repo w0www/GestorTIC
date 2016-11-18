@@ -32,10 +32,9 @@
 /tmp/thumbnails/*
 /vendor/cache
 *.rbc
-
 /.bundle
 /Gemfile.lock
 /Gemfile.local
-
 config/configuration.yml.example
 passenger*
+/.ruby-version

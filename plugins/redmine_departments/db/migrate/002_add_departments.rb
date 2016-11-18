@@ -15,6 +15,7 @@ class AddDepartments < ActiveRecord::Migration
       t.string "responsable_sepe", :limit => 100, :null => false
       t.string "telefono_responsable_sepe", :limit => 100, :null => false
       t.string "email_responsable_sepe", :limit => 100, :null => false
+      t.string "direccionip", :limit => 100, :null => false
       t.string "anotaciones", :limit => 100, :null => false
       t.integer "responsable_id"
       t.integer "coordinador_id"
