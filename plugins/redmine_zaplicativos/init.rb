@@ -2,7 +2,7 @@ require 'redmine'
 
 require 'redmine_aplicativos'
 
-Redmine::Plugin.register :redmine_aplicativos do
+Redmine::Plugin.register :redmine_zaplicativos do
   name 'Redmine aplicativos plugin'
   author 'Nick Peelman, Aleksandr Palyan and Imanol Alvarez'
   description 'aplicativos Plugin.  Icons are from the Silk collection, by FamFamFam'
