@@ -4,7 +4,7 @@ require 'redmine_positions'
 
 Redmine::Plugin.register :redmine_positions do
   name 'Redmine positions plugin'
-  author 'Nick Peelman, Aleksandr Palyan and Imanol Alvarez'
+  author 'Imanol Alvarez'
   description 'positions/Offices Plugin.  Icons are from the Silk collection, by FamFamFam'
   version '1.0.1'
   settings({
