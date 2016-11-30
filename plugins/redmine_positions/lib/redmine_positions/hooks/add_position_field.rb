@@ -88,12 +88,15 @@ module RedminePositions
       end
 
       def set_positions_on_issue(context)
-        if context[:params] && context[:params][:issue] && context[:params][:issue][:position_ids] != ""
-          # Por alguna razon cuando llega a este punto llega siempre un array [""] y luego el resto. (llega porque es multilpe)
-            Rails.logger.info "esto es #{context[:params][:issue][:position_ids]}"
-            context[:issue].positions << Position.find(context[:params][:issue][:position_ids].to_i)
+        if has_permission?(context)
+          if context[:params] && context[:params][:issue] && context[:params][:issue][:position_ids] != ""
+            # Por alguna razon cuando llega a este punto llega siempre un array [""] y luego el resto. (llega porque es multilpe)
+              Rails.logger.info "esto es #{context[:params][:issue][:position_ids]}"
+              context[:issue].positions << Position.find(context[:params][:issue][:position_ids].to_i)
+          end
+        else
+          return ''
         end
-        return ''
       end
     end
   end

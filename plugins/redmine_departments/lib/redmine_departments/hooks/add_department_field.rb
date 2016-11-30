@@ -88,16 +88,19 @@ module RedmineDepartments
       end
 
       def set_departments_on_issue(context)
-        if context[:params] && context[:params][:issue] && context[:params][:issue][:department_ids] != [""]
-          # Por alguna razon cuando llega a este punto llega siempre un array [""] y luego el resto. 
-          # Tenemos que quitar ese primer array.
-          array_oficinas = context[:params][:issue][:department_ids] - [""]
-          # Iteramos por el array de oficinas y las introducimos a los departamentos de la issue
-          for o in array_oficinas
-            context[:issue].departments << Department.find(o.to_i)
+        if has_permission?(context)
+          if context[:params] && context[:params][:issue] && context[:params][:issue][:department_ids] != [""]
+            # Por alguna razon cuando llega a este punto llega siempre un array [""] y luego el resto. 
+            # Tenemos que quitar ese primer array.
+            array_oficinas = context[:params][:issue][:department_ids] - [""]
+            # Iteramos por el array de oficinas y las introducimos a los departamentos de la issue
+            for o in array_oficinas
+              context[:issue].departments << Department.find(o.to_i)
+            end
           end
+        else
+          return ''
         end
-        return ''
       end
     end
   end
